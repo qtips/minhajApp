@@ -1,0 +1,5 @@
+touch/
+.sencha/
+build/
+# SASS cache
+resources/sass/.sass-cache
