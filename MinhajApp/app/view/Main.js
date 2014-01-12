@@ -1,65 +1,137 @@
 Ext.define('MinhajApp.view.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Container',
+
     xtype: 'main',
     requires: [
-        'Ext.TitleBar',
-        'Ext.Video'
+        'Ext.Menu'
     ],
-    config: {
-        tabBarPosition: 'bottom',
 
+    config: {
+        sideMenu: {},
+        layout: 'vbox',
         items: [
             {
-                title: 'Hello World',
-                iconCls: 'home',
-
-                styleHtmlContent: true,
-                scrollable: true,
-
-                items: {
-                    docked: 'top',
-                    xtype: 'titlebar',
-                    title: 'Hello Qadeer'
-                },
-
-                html: [
-                    "I changed the default <b>HTML Contents</b> to something different!"
-                ].join("")
-            },
-            {
-                title: 'Get Started',
-                iconCls: 'action',
-
+                xtype: 'panel',
+                html: "Velkommen til Minhaj App",
+                style: 'background-color:red',
+                flex: 1,
                 items: [
                     {
-                        docked: 'top',
-                        xtype: 'titlebar',
-                        title: 'Getting Started'
-                    },
-                    {
-                        xtype: 'video',
-                        url: 'http://av.vimeo.com/64284/137/87347327.mp4?token=1330978144_f9b698fea38cd408d52a2393240c896c',
-                        posterUrl: 'http://b.vimeocdn.com/ts/261/062/261062119_640.jpg'
+                        align: 'left',
+                        //pack: 'center',
+                        iconCls: 'action',
+                        xtype: 'spacer',
+                        margin: '0 0',
+                        handler: function () {
+                            Ext.Viewport.toggleMenu('left');
+                        }
                     }
                 ]
+
             },
             {
-                title: 'Blog',
-                iconCls: 'action',
-
-                items: [
-                    {
-                        docked: 'top',
-                        xtype: 'nestedlist',
-                        title: 'Blog'
-                    },
-                    {
-                        xtype: 'video',
-                        url: 'http://av.vimeo.com/64284/137/87347327.mp4?token=1330978144_f9b698fea38cd408d52a2393240c896c',
-                        posterUrl: 'http://b.vimeocdn.com/ts/261/062/261062119_640.jpg'
-                    }
-                ]
+                xtype: 'panel',
+                html: ' Dette er kroppen',
+                style: 'background-color:green',
+                flex: 2
             }
         ]
+    },
+
+    initialize: function () {
+        this.setSideMenu(Ext.create('Ext.Menu',
+            { items: {
+                xtype: 'button',
+                text: 'New Item',
+                iconCls: 'settings',
+                scope: this,
+                handler: function () {
+                    Ext.Viewport.hideMenu('left');
+                }
+            }
+            }
+        ))
+
+        Ext.Viewport.setMenu(this.getSideMenu(),
+            {
+                side: 'left',
+                reveal: true
+            });
     }
+
+    /*doSetHidden: function(hidden) {
+     this.callParent(arguments);
+
+     if (hidden) {
+     Ext.Viewport.removeMenu('left');
+     Ext.Viewport.removeMenu('right');
+     Ext.Viewport.removeMenu('bottom');
+     Ext.Viewport.removeMenu('top');
+     } else {
+     Ext.Viewport.setMenu(this.menuForSide('top'), {
+     side: 'top'
+     });
+
+     Ext.Viewport.setMenu(this.menuForSide('bottom'), {
+     side: 'bottom',
+     cover: false
+     });
+
+     Ext.Viewport.setMenu(this.menuForSide('left'), {
+     side: 'left',
+     reveal: true
+     });
+
+     Ext.Viewport.setMenu(this.menuForSide('right'), {
+     side: 'right',
+     reveal: true
+     });
+     }
+     },
+     */
+
+//    menuForSide: function (side) {
+//        var items = [
+//            {
+//                text: 'Settings',
+//                iconCls: 'settings',
+//                scope: this,
+//                handler: function () {
+//                    Ext.Viewport.hideMenu(side);
+//                }
+//            },
+//            {
+//                text: 'New Item',
+//                iconCls: 'compose',
+//                scope: this,
+//                handler: function () {
+//                    Ext.Viewport.hideMenu(side);
+//                }
+//            },
+//            {
+//                xtype: 'button',
+//                text: 'Star',
+//                iconCls: 'star',
+//                scope: this,
+//                handler: function () {
+//                    Ext.Viewport.hideMenu(side);
+//                }
+//            }
+//        ];
+//
+//        var className = 'Ext.Menu';
+//        if (Ext.theme.name == "Blackberry") {
+//            if (['top', 'bottom'].indexOf(side) != -1) {
+//                className = 'Ext.ux.ApplicationMenu';
+//            } else {
+//                className = 'Ext.ux.ContextMenu';
+//            }
+//        }
+//
+//        return Ext.create(className, {
+//            items: items
+//        });
+//    }
+
+
 });
