@@ -8,7 +8,8 @@ Ext.define('MinhajApp.controller.MainMenuController', {
         refs: {
             mainNavigator: "#mainNav",
             eventListView: {
-                selector: "#eventListView",
+                selector: "eventListView",
+                xtype: "eventListView",
                 autoCreate: true
             }
         },
@@ -25,7 +26,10 @@ Ext.define('MinhajApp.controller.MainMenuController', {
         var buttonAction = button.action;
 
         if (buttonAction=='event') {
-            this.getMainNavigator().push(this.getEventListView())
+            var eventView = this.getEventListView();
+            if (eventView.getStore()==null)
+                eventView.setStore(Ext.getStore('EventStore'))
+            this.getMainNavigator().push(eventView);
         }
         else if (buttonAction=='eventCalendar') {
 

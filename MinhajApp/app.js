@@ -24,6 +24,8 @@ Ext.application({
     controllers: [
         'MainMenuController'
     ],
+    models: ['Event'],
+    stores: ['EventStore'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
