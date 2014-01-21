@@ -5,8 +5,8 @@ Ext.define('MinhajApp.view.EventListView', {
     extend: 'Ext.dataview.List',
     alias: "widget.eventListView",
     config: {
-        itemTpl: '<div class="contact">{name}</div>',
-        emptyText: '<pre><div class="notes-list-empty-text" > No notes found. <div></pre>',
+        itemTpl: '<div>{name}</div>',
+        emptyText: '<pre><div> Ingen event<div></pre>',
         onItemDisclosure: true
 
     }

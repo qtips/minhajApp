@@ -1,3 +1,15 @@
+$base-color: #000010 !default;
+$font-family: "arial","serif"!default;
+//$page-bg-color:linear-gradient(to bottom, #E00010 0%,rgba(5,5,5,1) 100%)!default;
+$page-bg-color:#fff !default;
+$active-color: darken(saturate(#E00010, 55%), 10%) !default;
+$list-color: #000 !default;
+/**
+ * @var {color} $list-bg-color
+ * Background-color for list rows.
+ */
+$list-bg-color: #fff !default;
+
 // The following two lines import the default Sencha Touch theme. If you are building
 // a new theme, remove them and the add your own CSS on top of the base CSS (which
 // is already included in your app.json file).
@@ -5,6 +17,7 @@
 @import 'sencha-touch/default/all';
 
 // Custom code goes here..
+
 
 // Examples of using the icon mixin:
 // @include icon('user');

@@ -16,7 +16,8 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "MinhajApp": "app"
+  "MinhajApp": "app",
+  "MinhajApp.view.Main": "app/view/SideMenuApp.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractComponent": [],
@@ -638,7 +639,16 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "MinhajApp.view.Main": []
+  "MinhajApp.controller.EventController": [],
+  "MinhajApp.controller.MainMenuController": [],
+  "MinhajApp.model.Event": [],
+  "MinhajApp.store.EventStore": [],
+  "MinhajApp.view.EventDetailView": [],
+  "MinhajApp.view.EventListView": [],
+  "MinhajApp.view.Main": [],
+  "MinhajApp.view.MainContainer": [],
+  "MinhajApp.view.MainMenu": [],
+  "MinhajApp.view.SquareButton": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1357,7 +1367,26 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "MinhajApp.controller.EventController": [],
+  "MinhajApp.controller.MainMenuController": [],
+  "MinhajApp.model.Event": [],
+  "MinhajApp.store.EventStore": [],
+  "MinhajApp.view.EventDetailView": [
+    "widget.eventDetailView"
+  ],
+  "MinhajApp.view.EventListView": [
+    "widget.eventListView"
+  ],
   "MinhajApp.view.Main": [
     "widget.main"
+  ],
+  "MinhajApp.view.MainContainer": [
+    "widget.main"
+  ],
+  "MinhajApp.view.MainMenu": [
+    "widget.mainMenu"
+  ],
+  "MinhajApp.view.SquareButton": [
+    "widget.sButton"
   ]
 });

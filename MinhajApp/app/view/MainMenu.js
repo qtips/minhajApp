@@ -22,6 +22,7 @@ Ext.define('MinhajApp.view.MainMenu', {
                     xtype: 'sButton',
                     width: "50%",
                     align: "end",
+                    ui: 'action',
                     flex: 1
                 },
                 items: [
@@ -49,6 +50,7 @@ Ext.define('MinhajApp.view.MainMenu', {
                 defaults: {
                     flex: 1,
                     xtype: 'sButton',
+                    ui: 'action',
                     width   : "50%"
                 },
                 items: [

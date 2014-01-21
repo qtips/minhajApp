@@ -18,11 +18,11 @@ Ext.application({
     ],
 
     views: [
-        'MainContainer', 'MainMenu','SquareButton', 'EventListView'
+        'MainContainer', 'MainMenu','SquareButton', 'EventListView', 'EventDetailView'
     ],
 
     controllers: [
-        'MainMenuController'
+        'MainMenuController', 'EventController'
     ],
     models: ['Event'],
     stores: ['EventStore'],
