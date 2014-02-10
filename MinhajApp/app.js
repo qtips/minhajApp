@@ -35,7 +35,7 @@ Ext.application({
 
     launch: function() {
         // Destroy the #appLoadingIndicator element
-       //Ext.fly('appLoadingIndicator').destroy();
+        Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('MinhajApp.view.MainMenu'));
