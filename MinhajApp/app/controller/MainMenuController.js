@@ -6,7 +6,8 @@ Ext.define('MinhajApp.controller.MainMenuController', {
 
     config: {
         refs: {
-            mainNavigator: "#mainNav",
+            mainNavigator: "mainNavigator",
+            mainMenu: "#mainMenu",
             eventListView: {
                 selector: "eventListView",
                 xtype: "eventListView",
@@ -14,34 +15,51 @@ Ext.define('MinhajApp.controller.MainMenuController', {
             }
         },
         control: {
-            'mainMenu sButton': {
+            'mainNavigator': {
+                back: 'onBackButtonTap'
+            },
+            'mainNavigator sButton': {
                 tap: 'onMenuButtonTap'
+            },
+            'eventListView': {
+                pushViewEvent: 'onPushViewEvent'
             }
         }
 
 
     },
 
-    onMenuButtonTap: function(button) {
+    onPushViewEvent: function (srcView, pushView) {
+        this.getMainNavigator().push(pushView);
+    },
+    onMenuButtonTap: function (button) {
         var buttonAction = button.action;
 
-        if (buttonAction=='event') {
+        if (buttonAction == 'event') {
+
             var eventView = this.getEventListView();
-            if (eventView.getStore()==null)
+            if (eventView.getStore() == null)
                 eventView.setStore(Ext.getStore('EventStore'))
-            this.getMainNavigator().push(eventView);
+            this.getMainNavigator().push(eventView)
         }
-        else if (buttonAction=='eventCalendar') {
+        else if (buttonAction == 'eventCalendar') {
 
         }
-        else if (buttonAction=='about') {
+        else if (buttonAction == 'about') {
 
         }
-        else if (buttonAction=='brochure') {
+        else if (buttonAction == 'brochure') {
 
         }
 
+    },
+    onBackButtonTap: function (navigationView, options) {
+        if (navigationView.getActiveItem().id == this.getMainMenu().id)
+        {
+            navigationView.showChildren()
+        }
     }
+
 
 
 

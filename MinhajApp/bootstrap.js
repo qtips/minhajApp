@@ -646,7 +646,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "MinhajApp.view.EventDetailView": [],
   "MinhajApp.view.EventListView": [],
   "MinhajApp.view.Main": [],
-  "MinhajApp.view.MainContainer": [],
   "MinhajApp.view.MainMenu": [],
   "MinhajApp.view.SquareButton": []
 });
@@ -1380,11 +1379,8 @@ Ext.ClassManager.addNameAliasMappings({
   "MinhajApp.view.Main": [
     "widget.main"
   ],
-  "MinhajApp.view.MainContainer": [
-    "widget.main"
-  ],
   "MinhajApp.view.MainMenu": [
-    "widget.mainMenu"
+    "widget.mainNavigator"
   ],
   "MinhajApp.view.SquareButton": [
     "widget.sButton"

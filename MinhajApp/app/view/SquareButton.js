@@ -7,7 +7,9 @@ Ext.define('MinhajApp.view.SquareButton', {
         initialize: function () {
             this.callParent(arguments)
             this.setHeight(this.getWidth());
-        }
+        },
+        style:'border-radius:0'
+
 
 
     }
